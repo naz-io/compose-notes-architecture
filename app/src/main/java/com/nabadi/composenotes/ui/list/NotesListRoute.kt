@@ -11,7 +11,7 @@ fun NotesListRoute(
 ) {
     // No side-effects. Just read the current state snapshot.
     NotesListScreen(
-        state = viewModel.state,
+        uiState = viewModel.state,
         modifier = modifier,
     )
 }
