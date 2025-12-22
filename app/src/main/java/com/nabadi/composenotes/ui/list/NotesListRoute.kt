@@ -1,4 +1,17 @@
 package com.nabadi.composenotes.ui.list
 
-class NotesListRoute {
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
+
+@Composable
+fun NotesListRoute(
+    modifier: Modifier = Modifier,
+    viewModel: NotesListViewModel = viewModel<NotesListViewModel>(),
+) {
+    // No side-effects. Just read the current state snapshot.
+    NotesListScreen(
+        state = viewModel.state,
+        modifier = modifier,
+    )
 }
