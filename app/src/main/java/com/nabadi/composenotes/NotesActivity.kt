@@ -10,7 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import com.nabadi.composenotes.ui.theme.ComposeNotesArchitectureTheme
 
-class MainActivity : ComponentActivity() {
+class NotesActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ComposeNotesArchitecture">
         <activity
-            android:name=".MainActivity"
+            android:name=".NotesActivity"
             android:exported="true"
             android:theme="@style/Theme.ComposeNotesArchitecture">
             <intent-filter>
