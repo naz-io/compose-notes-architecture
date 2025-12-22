@@ -3,6 +3,6 @@ package com.nabadi.composenotes.navigation
 import androidx.compose.runtime.Composable
 
 @Composable
-fun NotesNavHost() {
+fun NotesNavGraph() {
     // NavHost will live here later
 }
