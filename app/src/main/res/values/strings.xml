@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ComposeNotesArchitecture</string>
+    <string name="notes_list_title">Notes</string>
 </resources>
