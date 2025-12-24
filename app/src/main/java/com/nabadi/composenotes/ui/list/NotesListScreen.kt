@@ -15,6 +15,11 @@ import com.nabadi.composenotes.R
 import com.nabadi.composenotes.domain.Note
 import com.nabadi.composenotes.ui.theme.ComposeNotesArchitectureTheme
 
+// This screen is intentionally pure.
+// It renders state and nothing else.
+// No side-effects, no lifecycle awareness, no data loading,
+// and no assumptions about where the state comes from.
+// If behavior ever appears here, it means a boundary was crossed.
 @Composable
 fun NotesListScreen(
     uiState: NotesListUiState,

@@ -13,6 +13,12 @@ class NotesListViewModel(
     private val _uiState: MutableStateFlow<NotesListUiState> = MutableStateFlow(NotesListUiState())
     val uiState: StateFlow<NotesListUiState> = _uiState.asStateFlow()
 
+    // This function performs exactly one unit of work: load notes once and publish the result.
+    // It is intentionally synchronous and side-effect free beyond state updates.
+    // There is no retry logic, no coroutine launching, and no defensive checks here
+    // because timing and repetition are controlled by the caller (the UI boundary),
+    // not hidden inside the ViewModel.
+    // This keeps "when work happens" visible and testable.
     fun loadNotes() {
         _uiState.value = NotesListUiState(isLoading = true)
 

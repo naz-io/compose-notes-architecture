@@ -8,6 +8,12 @@ import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.nabadi.composenotes.data.InMemoryNotesRepository
 
+// This composable is intentionally a "Route":
+// it owns lifecycle awareness, side-effects, and ViewModel wiring.
+// It does not render UI directly and it does not contain business logic.
+// The purpose of this boundary is to keep rendering pure and
+// make the timing of work explicit.
+// If side-effects or wiring move out of here, the architecture has regressed.
 @Composable
 fun NotesListRoute(
     modifier: Modifier = Modifier,
@@ -15,6 +21,8 @@ fun NotesListRoute(
         factory = NotesListViewModelFactory(InMemoryNotesRepository())
     ),
 ) {
+    // This side-effect lives here, not in the screen, not in UI elements,
+    // and not in the ViewModel, because this is where lifecycle meets intent.
     LaunchedEffect(Unit) {
         viewModel.loadNotes()
     }
