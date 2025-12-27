@@ -17,7 +17,7 @@ class NotesListViewModelTest {
     }
 
     @Test
-    fun `uiState is empty initially, then contains notes after loadNotes`() {
+    fun uiState_initial_then_contains_notes_after_loadNotes() {
         // Arrange
         val fakeNotes = listOf(
             Note(id = 1, title = "A", body = "Body A"),
